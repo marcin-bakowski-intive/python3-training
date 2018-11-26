@@ -1,8 +1,16 @@
+def hello_world():
+    print("Hello World !!")
+
+
 def get_sum(x, y):
+    """
+    returns x + y sum
+
+    :param x:
+    :param y:
+    :return:
+    """
     return x + y
-
-
-print("get_sum(): %s" % get_sum(1, 1))
 
 
 # function with *args
@@ -10,17 +18,24 @@ def get_sum_unlimited_args(*args):
     return sum(args)
 
 
-print("get_sum_unlimited_args: %s" % get_sum_unlimited_args(1, 2, 3, 4, 5))
-
-
 # function with default parameters
 def increment(value, step=1):
+    """
+    Increments given value
+
+    :param value: value to increment (numeric type)
+    :param step: increment step (numeric type)
+    :return:
+    """
     return value + step
 
 
-print("Increment fn: %s" % increment(1))
-print("Increment fn: %s" % increment(1, 2))
-print("Increment fn: %s" % increment(1, step=3))
+def noop():
+    """
+    No operation function
+    :return: None
+    """
+    pass
 
 
 # function with args and kwargs
@@ -30,8 +45,15 @@ def sum_elements(*args, **kwargs):
     return sum(v for v in items)
 
 
+hello_world()
+print("get_sum(): %s" % get_sum(1, 1))
+print("get_sum_unlimited_args: %s" % get_sum_unlimited_args(1, 2, 3, 4, 5))
+print("Increment fn: %s" % increment(1))
+print("Increment fn: %s" % increment(1, 2))
+print("Increment fn: %s" % increment(1, step=3))
 print("Sum elements: %s" % sum_elements(1, 2, 3))
 print("Sum elements: %s" % sum_elements(1, 2, 3, odd_only=True))
+
 
 # anonymous lambda function
 to_lower = lambda x: x.lower()

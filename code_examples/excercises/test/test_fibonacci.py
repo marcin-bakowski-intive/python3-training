@@ -1,8 +1,9 @@
 from unittest import TestCase
-from .exercise import get_fibonacci_nth_value
+
+from excercises.fibonacci import get_fibonacci_nth_value
 
 
-class TestExercise(TestCase):
+class FibonacciTest(TestCase):
     def test_fibonacci_sequence(self):
         self.assertEqual(get_fibonacci_nth_value(0), 0)
         self.assertEqual(get_fibonacci_nth_value(1), 1)

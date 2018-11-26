@@ -3,6 +3,13 @@ import os
 CURRENT_DIR = os.path.dirname(__file__)
 
 
+def copy_file_content(src_path, dst_path, remove_char=""):
+    with open(src_path) as src_file:
+        with open(dst_path, "w") as dst_file:
+            for line in src_file:
+                dst_file.write(line.replace(remove_char, ""))
+
+
 def get_non_empty_lines(file_path):
     content = []
     with open(file_path) as f:
@@ -25,4 +32,16 @@ def copy_non_empty_lines(src_file_path, dst_file_path):
     save_file_content(dst_file_path, lines)
 
 
-copy_non_empty_lines(os.path.join(CURRENT_DIR, "..", "..", "README.md"), "output.txt")
+with open("/var/log/syslog") as src_file:
+    for line in src_file:
+        if "systemd" in line:
+            print(line.strip())
+
+
+src_file = open("/var/log/syslog")
+for line in src_file:
+    if "systemd" in line:
+        print(line.strip())
+src_file.close()
+
+copy_file_content(__file__, os.path.join(CURRENT_DIR, "%s_striped" % __file__), "\n")
