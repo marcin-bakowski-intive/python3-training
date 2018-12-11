@@ -11,5 +11,4 @@ def get_fibonacci_nth_value(n):
     if n < 2:
         return n
     else:
-        # TODO: implement
-        pass
+        return get_fibonacci_nth_value(n - 1) + get_fibonacci_nth_value(n - 2)
