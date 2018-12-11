@@ -9,7 +9,7 @@ print("%s AND %s == %s" % (a, b, a and b))
 print("%s & %s == %s" % (a, b, a & b))
 
 print("%s OR %s == %s" % (a, b, a or b))
-print("%s | %s == %s" % (a, b, a or b))
+print("%s | %s == %s" % (a, b, a | b))
 
 print("NOT %s == %s" % (a, not a))
 

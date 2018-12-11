@@ -12,6 +12,7 @@ print(test_string[-1])      # prints last character: g
 print(test_string[:4])	    # print slice of string (first 4 characters) -> test
 print(test_string[-6:])	    # print slice of string (last 6 characters) -> string
 print(test_string[-11:])    # print "test string" using negative indexing
+print(test_string[::-1])    # revingersed str
 
 animal = "beagle dog"
 print("This is a %s" % animal.upper())
